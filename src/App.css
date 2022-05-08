@@ -4,6 +4,11 @@
 .Game {
   text-align: center;
 }
+.Home {
+  height: 100%;
+  background-color: #180821;
+}
 .image {
-  width: 20%;
+  max-height: 1000px;
+  max-width: 65%;
 }

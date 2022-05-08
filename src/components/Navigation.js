@@ -1,16 +1,30 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
-export const Navigation = (props) => {
+export const Navigation = ({ onClick }) => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Guess the City</Navbar.Brand>
-          <Nav className="me-auto"></Nav>
-        </Container>
-      </Navbar>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{
+          borderBottom: (theme) => `1px solid ${theme.palette.btnColor}`,
+          backgroundColor: (theme) => `${theme.palette.accentColor.main}`,
+        }}
+      >
+        <Toolbar sx={{ flexWrap: "wrap" }}>
+          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            GuessTheCity
+          </Typography>
+          <Button onClick={onClick} variant="outline" sx={{ my: 1, mx: 1.5 }}>
+            <DarkModeIcon />
+          </Button>
+        </Toolbar>
+      </AppBar>
     </>
   );
 };

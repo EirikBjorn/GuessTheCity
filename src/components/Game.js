@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { getImgs } from "./../data";
+import { getCities } from "./../getData";
 
 export const Game = (props) => {
   const [answer, setAnswer] = useState("");
-  const [rand, setRand] = useState(i);
-  const [imgList, setList] = useState([]);
+  const [cityList, setList] = useState([]);
+  const [curr, setCurr] = useState(0);
 
   useEffect(() => {
-    getImgs().then((response) => setList(response));
+    getCities(props.call).then((response) => setList(response));
   }, []);
 
-  var i = Math.floor(Math.random() * imgList.length);
+  let bucketUrl =
+    "https://storage.googleapis.com/guessthecity-95a9b.appspot.com/images/";
 
-  const handleSubmit = async (e) => {
-    if (answer.toUpperCase() == imgList[0].city.toUpperCase()) {
+  const handleSubmit = (e) => {
+    if (answer.toUpperCase() == cityList[curr].Name.toUpperCase()) {
       alert(answer + " is correct");
       setAnswer("");
-      setRand(Math.floor(Math.random() * imgList.length));
+      setCurr((curr += 1));
     } else {
-      setAnswer("");
       alert(answer + " is not correct");
+      setAnswer("");
+      setCurr((curr += 1));
     }
     e.preventDefault();
   };
@@ -27,8 +29,11 @@ export const Game = (props) => {
   return (
     <div className="Game">
       <div className="cont">
-        {imgList.length > 1 && (
-          <img className="image" src={imgList[i].url}></img>
+        {cityList.length > 1 && (
+          <img
+            className="image"
+            src={bucketUrl + cityList[curr].rank + ".png"}
+          ></img>
         )}
       </div>
       <br></br>
