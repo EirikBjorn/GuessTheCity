@@ -119,7 +119,7 @@ export const Game = (props) => {
     let response = await fetch(
       //"http://localhost:8080/answer/" +
       "https://still-tundra-86630.herokuapp.com/answer/" +
-        input +
+        input.trim() +
         "/" +
         cityList[curr].rank
     );
