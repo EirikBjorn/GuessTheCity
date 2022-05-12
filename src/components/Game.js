@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 import { autoComplete } from "../data/autoComplete";
@@ -83,13 +83,13 @@ export const Game = (props) => {
       setScore(score + 1);
       setAttempts(1);
       setInput("");
-      if (curr == 4) {
+      if (curr === 4) {
         handleOpen();
       } else {
         setCurr(curr + 1);
       }
     } else {
-      if (curr == 4 && attempts >= 3) {
+      if (curr === 4 && attempts >= 3) {
         handleOpen();
       }
       if (attempts < 3) {
@@ -102,7 +102,7 @@ export const Game = (props) => {
   };
 
   const failHandler = () => {
-    if (attempts == 3) {
+    if (attempts === 3) {
       errorToast();
       if (curr < 4) {
         setCurr(curr + 1);

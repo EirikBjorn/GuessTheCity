@@ -4,10 +4,9 @@ import "./App.css";
 import { Navigation } from "./components/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./components/Home";
-import { Footer } from "./components/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Game } from "./components/Game";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const dark = {
   palette: {
