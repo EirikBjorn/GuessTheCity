@@ -65,10 +65,11 @@ export const Game = (props) => {
     });
   };
 
+  const set = async () => {
+    setList(await getCities(restCall));
+  };
+
   useEffect(() => {
-    const set = async () => {
-      setList(await getCities(restCall));
-    };
     set();
   }, []);
 
