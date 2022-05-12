@@ -56,8 +56,7 @@ export const gameModes = [
     description: "All capitals with a population over 500k",
     restCall: "citiesCapitals",
     disabled: true,
-    image:
-      "https://images.unsplash.com/photo-1613567993548-b3a0d9abb736?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1941&q=80",
+    image: "https://wallpaperaccess.com/full/2146222.jpg",
   },
   {
     title: "Europe",
@@ -67,7 +66,7 @@ export const gameModes = [
     restCall: "citiesEurope",
     disabled: true,
     image:
-      "https://images.unsplash.com/photo-1613567993548-b3a0d9abb736?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1941&q=80",
+      "https://images.unsplash.com/photo-1551867633-194f125bddfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
   {
     title: "North America",
@@ -77,6 +76,6 @@ export const gameModes = [
     restCall: "citiesNA",
     disabled: true,
     image:
-      "https://images.unsplash.com/photo-1613567993548-b3a0d9abb736?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1941&q=80",
+      "https://images.unsplash.com/photo-1507992781348-310259076fe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
 ];

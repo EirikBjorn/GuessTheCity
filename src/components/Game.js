@@ -27,10 +27,11 @@ export const Game = (props) => {
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
+  const attemptsLeft = 3 - attempts;
   const failToast = () => {
-    toast("You have used " + attempts + " out of 3 tries", {
+    toast("You have " + attemptsLeft + " attempt(s) left", {
       position: "top-center",
-      autoClose: 2500,
+      autoClose: 1250,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -42,7 +43,7 @@ export const Game = (props) => {
   const errorToast = () => {
     toast("You failed :(", {
       position: "top-center",
-      autoClose: 2500,
+      autoClose: 1250,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -54,7 +55,7 @@ export const Game = (props) => {
   const successToast = () => {
     toast("You got it!", {
       position: "top-center",
-      autoClose: 2500,
+      autoClose: 1250,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -200,10 +201,10 @@ export const Game = (props) => {
       </Modal>
       <Container maxWidth="md" component="main">
         <div className="Game">
-          <div>
+          <div className="cont">
             {cityList.length > 1 && (
               <Box
-                className="cont"
+                className="gImg"
                 component="img"
                 src={bucketUrl + cityList[curr].rank + ".jpg"}
               />
@@ -238,7 +239,6 @@ export const Game = (props) => {
                   value={input}
                 />
               )}
-              onChange={(e, input) => setInput(input)}
             />
             <br></br>
             <Button

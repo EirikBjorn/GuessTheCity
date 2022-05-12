@@ -86,28 +86,28 @@ export const Home = () => {
                   <p>{game.description}</p>
                 </CardContent>
                 <CardActions>
-                  <Link
-                    className="playLink"
-                    to={{
-                      pathname: "/game/?gamemode=" + game.restCall,
-                    }}
-                    state={{ data: game.restCall }}
-                  >
-                    {!game.disabled ? (
+                  {!game.disabled ? (
+                    <Link
+                      className="playLink"
+                      to={{
+                        pathname: "/game/?gamemode=" + game.restCall,
+                      }}
+                      state={{ data: game.restCall }}
+                    >
                       <Button fullWidth color="btnColor" variant="contained">
                         PLAY
                       </Button>
-                    ) : (
-                      <Button
-                        disabled
-                        fullWidth
-                        color="btnColor"
-                        variant="contained"
-                      >
-                        Coming Soon
-                      </Button>
-                    )}
-                  </Link>
+                    </Link>
+                  ) : (
+                    <Button
+                      disabled
+                      fullWidth
+                      color="btnColor"
+                      variant="contained"
+                    >
+                      COMING SOON
+                    </Button>
+                  )}
                 </CardActions>
               </Card>
             </Grid>
