@@ -71,6 +71,7 @@ export const Game = (props) => {
 
   useEffect(() => {
     set();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let bucketUrl =
