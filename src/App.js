@@ -7,6 +7,7 @@ import { Home } from "./components/Home";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Game } from "./components/Game";
 import { Route, Routes } from "react-router-dom";
+import { Footer } from "./components/Footer";
 
 const dark = {
   palette: {
@@ -61,19 +62,22 @@ export const App = () => {
   return (
     <div className="content-container">
       <ThemeProvider theme={appliedTheme}>
-        <Navigation onClick={setThemeFunc} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="game" element={<Game />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
-        </Routes>
+        <main>
+          <Navigation onClick={setThemeFunc} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="game" element={<Game />} />
+            <Route
+              path="*"
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>There's nothing here!</p>
+                </main>
+              }
+            />
+          </Routes>
+        </main>
+        <Footer></Footer>
       </ThemeProvider>
     </div>
   );

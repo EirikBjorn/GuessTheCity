@@ -152,7 +152,7 @@ export const autoComplete = [
   "Ouagadougou",
   "Lusaka",
   "Guatemala City",
-  "Kiev",
+  "Kyiv",
   "Surabaya",
   "Nagpur",
   "Lisbon",

@@ -79,27 +79,29 @@ export const Game = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let resp = await checkAnswer();
-    if (resp.message) {
-      successToast();
-      setScore(score + 1);
-      setAttempts(1);
-      setInput("");
-      if (curr === 4) {
-        handleOpen();
+    if (input) {
+      let resp = await checkAnswer();
+      if (resp.message) {
+        successToast();
+        setScore(score + 1);
+        setAttempts(1);
+        setInput("");
+        if (curr === 4) {
+          handleOpen();
+        } else {
+          setCurr(curr + 1);
+        }
       } else {
-        setCurr(curr + 1);
+        if (curr === 4 && attempts >= 3) {
+          handleOpen();
+        }
+        if (attempts < 3) {
+          failToast();
+        }
+        setAttempts(attempts + 1);
+        failHandler();
+        setInput("");
       }
-    } else {
-      if (curr === 4 && attempts >= 3) {
-        handleOpen();
-      }
-      if (attempts < 3) {
-        failToast();
-      }
-      setAttempts(attempts + 1);
-      failHandler();
-      setInput("");
     }
   };
 
@@ -115,6 +117,7 @@ export const Game = (props) => {
 
   const checkAnswer = async () => {
     let response = await fetch(
+      //"http://localhost:8080/answer/" +
       "https://still-tundra-86630.herokuapp.com/answer/" +
         input +
         "/" +

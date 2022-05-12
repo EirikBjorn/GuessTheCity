@@ -3,18 +3,45 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
+import { textAlign } from "@mui/system";
 
 const footers = [
   {
     title: "Contact",
-    description: ["Mail", "Github", "LinkedIn", "Suggestion box"],
+    description: [
+      {
+        text: "Github",
+        link: "https://github.com/EirikBjorn",
+      },
+      {
+        text: "Twitter",
+        link: "https://twitter.com/Eiriiiik",
+      },
+      {
+        text: "LinkedIn",
+        link: "https://www.linkedin.com/in/eirik-bj%C3%B8rneseth-a952a3142/",
+      },
+    ],
   },
   {
     title: "More like this",
     description: [
-      "Android App (coming soon)",
-      "iOS App (coming soon)",
-      "Guess the country (coming soon)",
+      {
+        text: "Android App (coming soon)",
+        link: "",
+      },
+      {
+        text: "iOS App (coming soon)",
+        link: "",
+      },
+      {
+        text: "Guess the country (coming soon)",
+        link: "",
+      },
+      {
+        text: "Guess the flag (coming soon)",
+        link: "",
+      },
     ],
   },
 ];
@@ -28,7 +55,7 @@ export const Footer = () => {
         borderTop: (theme) => `1px solid ${theme.palette.divider}`,
         mt: 8,
         py: [3, 6],
-        position: "absolute",
+        position: "static",
         left: 0,
         bottom: 0,
         right: 0,
@@ -42,9 +69,13 @@ export const Footer = () => {
             </Typography>
             <ul>
               {footer.description.map((item) => (
-                <li key={item}>
-                  <Link href="#" variant="subtitle1" color="text.secondary">
-                    {item}
+                <li key={item.text}>
+                  <Link
+                    href={item.link}
+                    variant="subtitle1"
+                    color="text.secondary"
+                  >
+                    {item.text}
                   </Link>
                 </li>
               ))}
