@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export const Game = (props) => {
   const [input, setInput] = useState("");
@@ -207,7 +208,14 @@ export const Game = (props) => {
       <Container maxWidth="md" component="main">
         <div className="Game">
           <div className="cont">
-            {cityList.length > 1 && (
+            {cityList.length < 1 ? (
+              <>
+                Waking Server...
+                <br></br>
+                <br></br>
+                <CircularProgress color="btnColor" />
+              </>
+            ) : (
               <Box
                 className="gImg"
                 component="img"
